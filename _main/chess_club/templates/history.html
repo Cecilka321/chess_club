@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" type="img/png" href="{% static 'icon_knight.png' %}">
+    <title>History</title>
+    <style>
+        #frank    {     width: 60%;
+                        border:1px solid #ccc;
+                        padding:5px;
+                        margin-top: 1em;
+                        margin-bottom: 0.5em;
+                        background:#c2b62d;
+                        box-shadow: 0 28px 16px -26px rgba(0, 0, 0);    }
+        #space    {     margin-bottom: 0em;                             }
+        .menu     {     width: 100%;
+                        background-image: url( "{% static 'chess_floor.jpg' %}");   }
+        aside     {     width: 100%;
+                        background-image: url( "{% static 'chess_floor.jpg' %}");   }
+        main      {     font-family: Book Antiqua, Calibri, serif;
+                        font-size: 1.05em                                            }
+        #button_here{   border-radius: 35%;         }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header_grid_item">
+            <a class="link_back_to_home" href="{% url 'index' %}">
+                <img id="logo_back_to_home" src="{% static 'icon_knight2.png' %}" alt="logo klubu"></a>
+        </div>
+        <div class="header_grid_item">
+            <h1 class="head_caption">Club History</h1>
+        </div>
+    </header>
+    <nav class="menu">
+        <ul id="menu_links_list">
+            <li><a class="link_news" href="{% url 'news' %}">News</a></li>
+            <li><a class="link_members" href="{% url 'members' %}">Members</a></li>
+            <li><a class="link_tournaments" href="{% url 'tournaments' %}">Tournaments</a></li>
+            <li><a class="link_history" href="{% url 'academy' %}">Chess Academy</a></li>
+            <li><a class="link_gallery" href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a class="link_contacts" href="{% url 'contacts' %}">Contacts Us</a></li>
+            <li><a class="link_back_to_home" href="{% url 'index' %}">Main Page</a></li>
+        </ul>
+        <div class="height_of_main"></div>
+    </nav>
+    <main>
+        <article id="article_1">
+            <h2 class="header_main_1">Destiny of Frank Marshall</h2>
+            <p id="space"> &nbsp;&nbsp;&nbsp;&nbsp;Frank James Marshall (August 10, 1877 – November 9, 1944) was the U.S. Chess Champion from 1909
+                to 1936, and one of the world's strongest chess players in the early part of the 20th century.</p>
+
+            <div class="main_grid_item">
+                <img id="frank" src="{% static 'frankie1.jpg' %}" alt="picture of Frank Marshall">
+            </div>
+
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;Marshall was born in New York City, and lived in Montreal, Quebec, Canada, from age 8 to 19.
+                He began playing chess at the age of 10, and by 1890 (aged 13) was one of the leading players in
+                Montreal. He won the 1904 Cambridge Springs International Chess Congress (scoring 13/15, ahead of World
+                Champion Emanuel Lasker) and the U.S. Congress in 1904, but did not get the national title because the
+                U.S. champion at that time, Harry Nelson Pillsbury, did not compete. In 1906 Pillsbury died and Marshall
+                again refused the championship title until he won it in competition in 1909.In 1907 he played a match
+                against World Champion Emanuel Lasker for the title and lost eight games, winning none and drawing
+                seven. They played their match in New York City, Philadelphia, Washington, D.C., Baltimore, Chicago,
+                and Memphis from January 26 to April 8, 1907.</p>
+
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;In 1909 he agreed to play a match with then young Cuban chess player José Capablanca and,
+                to most people's surprise, lost eight games, drew fourteen, and won only one. After this defeat,
+                Marshall did not resent Capablanca; instead, he realized the young man had immense talent and deserved
+                recognition. The American champion worked hard to ensure Capablanca had the chance to play at the
+                highest levels of competition. Marshall insisted that Capablanca be permitted to enter the San
+                Sebastián tournament in 1911, an exclusive championship promising to be one of the strongest yet in
+                history. Despite much protest at his inclusion, Capablanca won the tournament.</p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;Marshall finished fifth at the St. Petersburg tournament in 1914, behind World Champion Lasker,
+                future World Champions Capablanca and Alekhine, and former World Championship challenger Tarrasch, but
+                ahead of the players who did not qualify for the final: Ossip Bernstein, Rubinstein, Nimzowitsch,
+                Blackburne, Janowski, and Gunsberg. According to Marshall's 1942 autobiography, which was reportedly
+                ghostwritten by Fred Reinfeld, Tsar Nicholas II conferred the title of "Grandmaster" on Marshall and
+                the other four finalists. Chess historian Edward Winter has questioned this, stating that the earliest
+                known sources that support this story are Marshall's autobiography and an article by Robert Lewis Taylor
+                in the June 15, 1940, issue of The New Yorker.</p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;In 1915 Marshall opened the Marshall Chess Club in New York City. In 1925 Marshall appeared in the
+                short Soviet film Chess Fever in a cameo appearance along with Capablanca.In 1920 he won the American
+                Chess Congress. In 1922 Marshall played 155 games simultaneously at the National Club in Montreal,
+                Canada, a world record. He scored 126 wins, 21 draws, and 8 losses in just over 7 hours. One week later,
+                when Marshall returned to New York, he replayed every single move of each games, he was able to remember
+                154 of the 155 games. In the 1930s Marshall captained the U.S. team to four gold medals at four Chess
+                Olympiads. </p>
+        </article>
+    </main>
+    <aside>
+    </aside>
+    <footer>
+        <h3 id="follow_us">You can follow us here:</h3>
+        <div id="icons-box">
+            <a href="https://facebook.com"><img class="icons" src="{% static 'icon_fb.png' %}" alt="icon facebook"></a>
+            <a href="https://instagram.com"><img class="icons" src="{% static 'icon_in.png' %}" alt="icon instagram"></a>
+            <a href="https://twitter.com/"><img class="icons" src="{% static 'icon_tw.png' %}" alt="icon twitter"></a>
+            <a href="https://youtube.com"><img class="icons" src="{% static 'icon_yt.png' %}" alt="icon youtube"></a>
+        </div>
+        <p id="terms">Attributing cooperation:</p>
+        <a id="link_attribution" href="{% url 'attribution' %}"><button id="button_here" type="button">Click me</button></a>
+        <p id="copyright">&copy; 2022 BehindTheSea Company Ltd.   |   All rights reserved </p>
+    </footer>
+</body>
+</html>

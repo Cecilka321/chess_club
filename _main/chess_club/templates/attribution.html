@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style_attribution.css' %}">
+    <link rel="icon" type="img/png" href="{% static 'icon_knight.png' %}">
+    <title>Attributing cooperation</title>
+    <style>
+        body    {     width: 100%;
+                      background-image: url( "{% static 'landscape.jpg' %}");   }
+    </style>
+</head>
+<body style="text-align: center;">
+    <h1>Attributing cooperation</h1><br>
+    <h3 class="p_link">We are proud to cooperate with:&nbsp;&nbsp;&nbsp;</h3>
+    <h3>
+        <a id="flaticon_review" href="https://www.flaticon.com/" title="chess icons">www.flaticon.com</a>
+        <a id="icon8_review" href="https://www.icons8.com/" title="chess icons">www.icons8.com</a><br><br>
+    </h3>
+    <h3 class="p_link_home">Follow this link to get home: &nbsp;</h3>
+    <h3><a id="back_link" href="{% url 'index' %}">HOME PAGE</a></h3>
+</body>
+</html>

@@ -1,0 +1,215 @@
+body {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    background-color: #bbd8a9;
+    font-family: Book Antiqua, Calibri, serif;
+
+    /* display mobile phones */
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "menu"
+        "main"
+        "aside"
+        "footer";
+}
+a {
+    text-decoration: none;
+}
+header {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    grid-area: header;
+    display: block;
+    text-align: center;
+    background-color: coral;
+    /* height: 14,571875em; */
+}
+#heading_1 {
+    margin: 0.8em 0em 0.4em;
+    font-size: 3em;
+    text-shadow: 2px 3px 2px #99bbff;
+    color: #693271;
+}
+#logo_header {
+    cursor: pointer;
+}
+#heading_2 {
+    margin-top: 0.2em;
+    margin-bottom: 0.1em;
+    text-shadow: 2px 3px 2px #99bbff;
+    font-size: 5em;
+    color: #693271;
+}
+#motto {
+    margin: 2.5em 0em 0.55em;
+    font-size: 1.75em;
+    font-style: italic;
+    font-weight: 700;
+    color: #693271;
+}
+.motto {
+    margin: 0em;
+    margin-bottom: 0,3em;
+    font-size: 2em;
+    font-style: italic;
+    font-weight: 700;
+    color: #693271;
+}
+#motto_autor {
+    margin-top: 0.5em;
+    margin-bottom: 4em;
+    font-size: 1.7em;
+    font-style: italic;
+    font-weight: 700;
+    color: #693271;
+}
+.header_grid_item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#menu {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    grid-area: menu;
+    background-color: #eabc78;
+    font-family: Book Antiqua, Calibri, serif;
+    font-size: 1.4em;
+}
+#menu a {
+    display: block;
+    padding: 0.8em;
+    text-align: center;
+    font-weight: 900;
+}
+#menu a:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+#menu_links_list {
+    margin: 0em 2.5em;
+    padding: 0em;
+    list-style-type: none;
+}
+#menu ul li a {
+    margin: 1em auto;
+    border-style: double;
+    border-width: 0.3em;
+    background-color: #ffff66;
+    color: #8c1e92;
+    font-size: 1.05em;
+}
+.link_news {
+    margin-top: 1.8em;
+}
+.height_of_main{
+    margin-bottom: 25em;
+}
+main {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    grid-area: main;
+    padding: 2em 2em 2em 2em;
+    background-color: #bbd8a9;
+    font-family: Book Antiqua, Calibri, serif;
+}
+#article_1 {
+    margin: auto;
+    width: 90%;
+}
+#farewell {
+    text-align: right;
+    margin-top: 2em;
+    margin-bottom: 0em;
+    font-style: italic;
+}
+#signature {
+    text-align: right;
+    margin-top: 0.3em;
+    font-style: italic;
+}
+aside {
+    width: 100%;
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    grid-area: aside;
+    background-color: #eabc78;
+}
+.aside_grid_item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main_grid_item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#img_reshewsky {
+    width: 50%;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+    border:1px solid #ccc;
+    padding:5px;
+    background:#c2b62d;
+    box-shadow: 0 28px 16px -26px rgba(0, 0, 0);
+}
+footer {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+    grid-area: footer;
+    background-color: #c3e0dc;
+    text-align: center;
+}
+#follow_us {
+    margin-top: 2em;
+    margin-bottom: 0.7em;
+    font-size: 1.4em;
+}
+.icons {
+    margin: 0.5em 3em;
+}
+#terms {
+    color: blue;
+    text-decoration-color: #ffff66;
+    font-size: 1.4em;
+    margin-top: 0.5em;
+}
+#button_here {
+    width: 12em;
+    margin-bottom: 0.3em;
+    background-color: #ff4d4d;
+    border-color: #ccc;
+    color: #ffff66;
+    font-family: Book Antiqua, Calibri, serif;
+    font-size: 1.2em;
+    height: 2em;
+    border-radius: 35%;
+}
+#button_here:hover {
+    background: yellow;
+    color: blue;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 35%;
+    border-color: red;
+}
+#copyright {
+    margin-bottom: 1.3em;
+}
+@media screen and (min-width: 700px) {
+    body{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+        "header header  header"
+        "menu   main    aside"
+        "footer footer  footer";
+        }
+    }

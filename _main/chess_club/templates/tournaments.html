@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" type="img/png" href="{% static 'icon_knight.png' %}">
+    <title>Tournaments</title>
+    <style>
+        #chess_tour {       width: 90%;
+                            border:1px solid #ccc;
+                            padding:5px;
+                            margin-top: 0.5em;
+                            margin-bottom: 0.5em;
+                            background:#c2b62d;
+                            -webkit-box-shadow: 0 28px 16px -26px rgba(0, 0, 0);
+                            -moz-box-shadow: 0 28px 16px -26px rgba(0, 0, 0);
+                             box-shadow: 0 28px 16px -26px rgba(0, 0, 0);       }
+        .menu       {       width: 100%;
+                            background-image: url( "{% static 'chess_floor.jpg' %}");   }
+        aside       {       width: 100%;
+                            background-image: url( "{% static 'chess_floor.jpg' %}");   }
+        main        {       font-family: Book Antiqua, Calibri, serif;
+                            font-size: 1.05em;                                          }
+        #button_here{       border-radius: 35%;                                         }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header_grid_item">
+            <a class="link_back_to_home" href="{% url 'index' %}">
+                <img id="logo_back_to_home" src="{% static 'icon_knight2.png' %}" alt="logo klubu"></a>
+        </div>
+        <div class="header_grid_item">
+            <h1 class="head_caption">Next Tournaments</h1>
+        </div>
+    </header>
+    <nav class="menu">
+        <ul id="menu_links_list">
+            <li><a class="link_news" href="{% url 'news' %}">News</a></li>
+            <li><a class="link_members" href="{% url 'members' %}">Members</a></li>
+            <li><a class="link_history" href="{% url 'history' %}">History of club</a></li>
+            <li><a class="link_gallery" href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a class="link_contacts" href="{% url 'academy' %}">Chess Academy</a></li>
+            <li><a class="link_tournaments" href="{% url 'contacts' %}">Contacts Us</a></li>
+            <li><a class="link_back_to_home" href="{% url 'index' %}">Main Page</a></li>
+        </ul>
+        <div class="height_of_main"></div>
+    </nav>
+    <main>
+        <article id="article_1">
+            <h2 class="header_main_1">Every sunday afternoon five-rounds rapid tournament!</h2>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit. At beatae dolore earum eveniet
+                exercitationem fugit, harum id laudantium magni maiores modi nisi quasi quibusdam quo, tempora! Expedita
+                ipsam omnis pariatur sapiente sequi tempora! Cupiditate dignissimos hic in, laudantium nam obcaecati
+                pariatur quasi recusandae repudiandae sit! Consequatur earum exercitationem molestiae molestias, odio
+                perferendis quae qui quos tenetur voluptatem. Id, tempore tenetur. Ad eligendi illum maiores, repel
+                saepe veritatis vitae voluptatum! Assumenda at consequuntur delectus deleniti doloremque et exercitation
+                impedit ipsa laudantium non nostrum praesentium quibusdam repellendus totam, ut veritatis voluptatum.
+                Aliquid amet animi assumenda atque cum dolores doloribus, enim error esse ex explicabo facere facilis
+                fugit harum illo inventore ipsa itaque.</p>
+            <div class="main_grid_item">
+                <img id="chess_tour" src="{% static 'tournament.png' %}" alt="picture of oldschool chess tournament"></a>
+            </div>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;Iure laudantium libero necessitatibus nobis obcaecati odit officia pariatur perspiciatis possimus
+                provident quia quos reiciendis rerum sequi soluta ullam. Autem doloremque eligendi explicabo iure nihil,
+                quod velit. Amet aperiam culpa, deleniti dolore doloribus ea earum eum explicabo,
+                impedit ipsum itaque modi nam non, numquam officiis quibusdam ratione repudiandae velit? Adipisci
+                asperiores atque dignissimos dolore doloremque doloribus et eum id itaque nesciunt, odit omnis quo
+                reiciendis temporibus totam vitae voluptatum.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Delectus deserunt distinctio dolore doloremque dolores eaque eligendi ex ipsum laborum magnam
+                molestias mollitia nam nemo neque, nobis odio quas ratione reiciendis sapiente sequi ut vel veritatis
+                vitae? Delectus enim non quia saepe sapiente, totam velit vitae? Accusantium aliquid atque magnam vero.
+                Consequatur consequuntur deserunt ipsam ipsum neque nisi pariatur quis saepe. A ab accusamus aliquam cum
+                ducimus excepturi.</p>
+        </article>
+    </main>
+    <aside>
+    </aside>
+    <footer>
+        <h3 id="follow_us">You can follow us here:</h3>
+        <div id="icons-box">
+            <a href="https://facebook.com"><img class="icons" src="{% static 'icon_fb.png' %}" alt="icon facebook"></a>
+            <a href="https://instagram.com"><img class="icons" src="{% static 'icon_in.png' %}" alt="icon instagram"></a>
+            <a href="https://twitter.com/"><img class="icons" src="{% static 'icon_tw.png' %}" alt="icon twitter"></a>
+            <a href="https://youtube.com"><img class="icons" src="{% static 'icon_yt.png' %}" alt="icon youtube"></a>
+        </div>
+        <p id="terms">Attributing cooperation:</p>
+        <a id="link_attribution" href="{% url 'attribution' %}"><button id="button_here" type="button">Click me</button></a>
+        <p id="copyright">&copy; 2022 BehindTheSea Company Ltd.   |   All rights reserved </p>
+    </footer>
+</body>
+</html>

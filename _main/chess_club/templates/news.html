@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" type="img/png" href="{% static 'icon_knight.png' %}">
+    <title>News</title>
+    <style>
+        #muzychuk { width: 50%
+                    border:1px solid #ccc;
+                    padding:5px;
+                    background:#c2b62d;
+                    margin-top: 0.5em;
+                    margin-bottom: 1.5em;
+                    -webkit-box-shadow: 0 28px 16px -26px rgba(0, 0, 0);
+                    -moz-box-shadow: 0 28px 16px -26px rgba(0, 0, 0);
+                    box-shadow: 0 28px 16px -26px rgba(0, 0, 0);
+                    }
+        .menu          {    width: 100%;
+                            background-image: url( "{% static 'chess_floor.jpg' %}");   }
+        aside     { width: 100%;
+                    background-image: url( "{% static 'chess_floor.jpg' %}");           }
+        main      { font-family: Book Antiqua, Calibri, serif;
+                    font-size: 1.05em;                              }
+        p         { font-family: Book Antiqua, Calibri, serif;
+                    font-size: 1.05em;                              }
+        #button_here{   border-radius: 35%;                         }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="link_back_to_home" href="{% url 'index' %}">
+            <img id="logo_back_to_home" src="{% static 'icon_knight2.png' %}" alt="logo klubu"></a>
+        <h1 class="head_caption">Chess News</h1>
+    </header>
+    <nav class="menu">
+        <ul id="menu_links_list">
+            <li><a class="link_members" href="{% url 'members' %}">Members</a></li>
+            <li><a class="link_tournaments" href="{% url 'tournaments' %}">Tournaments</a></li>
+            <li><a class="link_history" href="{% url 'history' %}">History of club</a></li>
+            <li><a class="link_gallery" href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a class="link_contacts" href="{% url 'academy' %}">Chess Academy</a></li>
+            <li><a class="link_news" href="{% url 'contacts' %}">Contacts Us</a></li>
+            <li><a class="link_back_to_home" href="{% url 'index' %}">Main Page</a></li>
+        </ul>
+        <div class="height_of_main"></div>
+    </nav>
+    <main>
+        <article id="article_1">
+            <h2 class="header_main_1">What happened lately in chess world</h2>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;GM Nihal Sarin and GM Nana Dzagnidze are in the sole leads of their respective groups with an
+                identical 4.5 points from six games in the 2022 Tata Steel Chess India Open Rapid and 2022 Tata Steel
+                Chess India Women's Rapid. Overnight leader GM Shakhriyar Mamedyarov had a tough day with two losses and
+                a draw, but joined GM Arjun Erigaisi to follow the leader on 3.5 points, giving Nihal a full-point lead
+                going into the final day of the rapid tomorrow. In the women's section, Dzagnidze is trailed by GM Humpy
+                Koneru, GM Mariya
+            <div class="main_grid_item">
+                <img id="muzychuk" src="{% static 'muzychuk.png' %}" alt="pictroe of woman chess grandmaster"></a>
+            </div>
+                Muzychuk GM Anna Ushenina, and IM Vaishali Rameshbabu, all just half a point behind.
+                After scoring two and a half points out of three games on the second day and capturing the sole lead,
+                Nihal appeared on the live commentary and was asked which was his favorite among the wins against
+                GM Gukesh D and GM S P Sethuraman. He replied with characteristic modesty, "I didn't play very well in
+                either of the games, but probably the first one (against Gukesh) was sounder," prompting GM Viswanathan
+                Anand to quip with a chuckle: "He didn't play very well in either of the games—what do you do with him?!
+                "</p>
+
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;It was a day of resurgence for GM Hikaru Nakamura, who scored two wins and a draw, and his win in
+                the very first game of the day against the former leader Mamedyarov earned very high praise from Anand.
+                Anand assessed 28.e5 as the pivotal moment of the game and remarked: "Full marks to Hikaru. Almost
+                trademark Hikaru: ... Some quiet position he plays. And he converts efficiently. After e5 he managed
+                the position just brilliantly. Improved the position with the same pace as Shakhriyar and never let him
+                back into the game."</p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;After the end of the day's play, when Anand quizzed Nakamura about his path to a comeback after
+                a difficult first day in the tournament, the American grandmaster came up with a jaw-dropping
+                revelation: "After the game yesterday, I fell asleep at eight, ... woke up at ... 2.40
+                and Titled Tuesday began at 3.00 and I decided to play this! ... I continued my very poor form
+                for a couple of games and I played myself into a good form ... And then I just played blitz for about
+                seven hours ... I went to sleep at 11 and slept till the round. So, ... interesting 24 hours!
+                "</p>
+        </article>
+    </main>
+    <aside>
+    </aside>
+    <footer>
+        <h3 id="follow_us">You can follow us here:</h3>
+        <div id="icons-box">
+            <a href="https://facebook.com"><img class="icons" src="{% static 'icon_fb.png' %}" alt="icon facebook"></a>
+            <a href="https://instagram.com"><img class="icons" src="{% static 'icon_in.png' %}" alt="icon instagram"></a>
+            <a href="https://twitter.com/"><img class="icons" src="{% static 'icon_tw.png' %}" alt="icon twitter"></a>
+            <a href="https://youtube.com"><img class="icons" src="{% static 'icon_yt.png' %}" alt="icon youtube"></a>
+        </div>
+        <p id="terms">Attributing cooperation:</p>
+        <a id="link_attribution" href="{% url 'attribution' %}"><button id="button_here" type="button">Click me</button></a>
+        <p id="copyright">&copy; 2022 BehindTheSea Company Ltd.   |   All rights reserved </p>
+    </footer>
+</body>
+</html>

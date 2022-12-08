@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" type="img/png" href="{% static 'icon_knight.png' %}">
+    <title>Gallery</title>
+    <style>
+        #main_img       {    background: #ddd;
+                             display: block;
+                             background: #ccc;
+                             margin: 0 auto;    }
+        .list_img       {    background: #ddd;
+                             width: 800px;
+                             margin: 0 auto;
+                             display: grid;
+                             grid-template-columns: 1fr 1fr 1fr 1fr;    }
+        .menu           {    width: 100%;
+                             background-image: url( "{% static 'chess_floor.jpg' %}");   }
+        aside           {    width: 100%;
+                             background-image: url( "{% static 'chess_floor.jpg' %}");   }
+        #mar1           {    height: 150px;
+                             width: 200px;              }
+        #mar2           {    height: 150px;
+                             width: 200px;              }
+        #mar3           {    height: 150px;
+                             width: 200px;              }
+        #mar4           {    height: 150px;
+                             width: 200px;              }
+        #mar5           {    height: 150px;
+                             width: 200px;              }
+        #mar6           {    height: 150px;
+                             width: 200px;              }
+        #mar7           {    height: 150px;
+                             width: 200px;              }
+        #mar8           {    height: 150px;
+                             width: 200px;              }
+        #king           {    width: 60%;
+                             margin-top: 4em;           }
+        main            {    font-family: Book Antiqua, Calibri, serif;
+                             font-size: 1.05em          }
+        #button_here    {   border-radius: 35%;         }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="link_back_to_home" href="{% url 'index' %}">
+            <img id="logo_back_to_home" src="{% static 'icon_knight2.png' %}" alt="logo klubu"></a>
+        <h1 class="head_caption">Picture Gallery</h1>
+    </header>
+    <nav class="menu">
+        <ul id="menu_links_list">
+            <li><a class="link_news" href="{% url 'news' %}">News</a></li>
+            <li><a class="link_members" href="{% url 'members' %}">Members</a></li>
+            <li><a class="link_tournaments" href="{% url 'tournaments' %}">Tournaments</a></li>
+            <li><a class="link_history" href="{% url 'history' %}">History of club</a></li>
+            <li><a class="link_contacts" href="{% url 'academy' %}">Chess Academy</a></li>
+            <li><a class="link_gallery" href="{% url 'contacts' %}">Contacts Us</a></li>
+            <li><a class="link_back_to_home" href="{% url 'index' %}">Main Page</a></li>
+        </ul>
+        <div class="height_of_main"></div>
+    </nav>
+    <main>
+        <img id="main_img" height= "45%" width=100% src="{% static 'Marshall_club_9.jpg' %}" alt="asd">
+        <div class="list_img" >
+            <img id="mar1" src="{% static 'Marshall_club_1.jpg' %}" alt="asd">
+            <img id="mar2" src="{% static 'Marshall_club_2.jpg' %}" alt="dfad">
+            <img id="mar3" src="{% static 'Marshall_club_3.jpg' %}" alt="adfda">
+            <img id="mar4" src="{% static 'Marshall_club_4.jpg' %}" alt="afadsf">
+            <img id="mar5" src="{% static 'Marshall_club_5.jpg' %}" alt="afda">
+            <img id="mar6" src="{% static 'Marshall_club_6.jpg' %}" alt="afasdf">
+            <img id="mar7" src="{% static 'Marshall_club_7.jpg' %}" alt="afadfda">
+            <img id="mar8" src="{% static 'Marshall_club_8.jpg' %}" alt="afaf">
+            <script>
+                let mainImage = document.getElementById("main-img");
+                let images = document.querySelectorAll("div.list-img img");
+
+                images.forEach(function(item){
+                    item.addEventListener('click', function(event) {
+                        mainImage.src = item.dataset.src;
+                        // dataset.src - souvisí s data-src v img..
+                    })
+            </script>
+        </div>
+    </main>
+    <aside>
+    </aside>
+    <footer>
+        <h3 id="follow_us">You can follow us here:</h3>
+        <div id="icons-box">
+            <a href="https://facebook.com"><img class="icons" src="{% static 'icon_fb.png' %}" alt="icon facebook"></a>
+            <a href="https://instagram.com"><img class="icons" src="{% static 'icon_in.png' %}" alt="icon instagram"></a>
+            <a href="https://twitter.com/"><img class="icons" src="{% static 'icon_tw.png' %}" alt="icon twitter"></a>
+            <a href="https://youtube.com"><img class="icons" src="{% static 'icon_yt.png' %}" alt="icon youtube"></a>
+        </div>
+        <p id="terms">Attributing cooperation:</p>
+        <a id="link_attribution" href="{% url 'attribution' %}"><button id="button_here" type="button">Click me</button></a>
+        <p id="copyright">&copy; 2022 BehindTheSea Company Ltd.   |   All rights reserved </p>
+    </footer>
+</body>
+</html>

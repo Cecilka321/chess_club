@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail of member</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" type="img/png" href="{% static 'icon_knight.png' %}">
+    <style>
+        body            {   font-family: Book Antiqua, Calibri, serif;                  }
+        .menu           {   width: 100%;
+                            background-image: url( "{% static 'chess_floor.jpg' %}");   }
+        aside           {   width: 100%;
+                            background-image: url( "{% static 'chess_floor.jpg' %}");   }
+        #table_member   {   margin-bottom: 2em;         }
+        #table_members  {   height: 800px;
+                            width: 100%;
+                            margin-bottom: 3em;         }
+        table           {   width: 100%;                }
+        table, th, td   {   border:1px solid black;
+                            background-color: #b4e6de;
+                            border-color: #1f608f;
+                            font-size: 1.1em;
+                            height: 2em;                }
+        td              {   text-align: center;
+                            vertical-align: middle;     }
+        tbody           {   height: 4em; }
+        a #back_members {   font-size: 1.2em;
+                            background-color: #aada97;
+                            border-width: 3px;
+                            border-color: #8e9f92;
+                            border-radius: 3%;
+                            color: #a84780;
+                            box-shadow: 5px 5px 10px grey;  }
+        main            {   font-family: Book Antiqua, Calibri, serif;
+                            font-size: 1.05em;              }
+        #button_here    {   border-radius: 35%;             }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="link_back_to_home" href="{% url 'index' %}">
+            <img id="logo_back_to_home" src="{% static 'icon_knight2.png' %}" alt="logo klubu"></a>
+        <h1 class="head_caption">Member details</h1>
+    </header>
+    <nav class="menu">
+        <ul id="menu_links_list">
+            <li><a class="link_news" href="{% url 'news' %}">News</a></li>
+            <li><a class="link_members" href="{% url 'members' %}">Members</a></li>
+            <li><a class="link_tournaments" href="{% url 'tournaments' %}">Tournaments</a></li>
+            <li><a class="link_history" href="{% url 'history' %}">History of Club</a></li>
+            <li><a class="link_gallery" href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a class="link_contacts" href="{% url 'contacts' %}">Contact Us</a></li>
+            <li><a class="link_back_to_home" href="{% url 'index' %}">Main Page</a></li>
+        </ul>
+        <div class="height_of_main"></div>
+    </nav>
+    <main>
+        <h2>Details about our member: &nbsp;&nbsp;{{ member_by_id.firstname }} {{ member_by_id.lastname }}</h2>
+        <div id="table_member">
+            <div class="main_grid_item">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Year of Birth</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone number</th>
+                        <th>Rating</th>
+                    </tr>
+                    <tr>
+                        <td>{{ member_by_id.firstname }} {{ member_by_id.lastname }}</td>
+                        <td>{{ member_by_id.birthyear }}</td>
+                        <td>{{ member_by_id.email }}</td>
+                        <td>{{ member_by_id.address }}</td>
+                        <td>{{ member_by_id.phone }}</td>
+                        <td>{{ member_by_id.rating }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <a href="{% url 'members'  %}"><button id="back_members">Back to members</button></a>
+    </main>
+    <aside>
+    </aside>
+    <footer>
+        <h3 id="follow_us">You can follow us here:</h3>
+        <div id="icons-box">
+            <a href="https://facebook.com"><img class="icons" src="{% static 'icon_fb.png' %}" alt="icon facebook"></a>
+            <a href="https://instagram.com"><img class="icons" src="{% static 'icon_in.png' %}" alt="icon instagram"></a>
+            <a href="https://twitter.com/"><img class="icons" src="{% static 'icon_tw.png' %}" alt="icon twitter"></a>
+            <a href="https://youtube.com"><img class="icons" src="{% static 'icon_yt.png' %}" alt="icon youtube"></a>
+        </div>
+        <p id="terms">Attributing cooperation:</p>
+        <a id="link_attribution" href="{% url 'attribution' %}"><button id="button_here" type="button">Click me</button></a>
+        <p id="copyright">&copy; 2022 BehindTheSea Company Ltd.   |   All rights reserved </p>
+    </footer>
+</body>
+</html>
+ <!--        <td class="chess_member_name">Nějaké jméno</td>
+             <td class="chess_member_birthyear">1979</td>
+             <td class="chess_member_email">kdkd@dfdk.cz</td>
+             <td class="chess_member_address">street</td>
+             <td class="chess_member_phone">+420 453 234 345</td>
+             <td class="chess_member_rating">1896</td>
+             -->

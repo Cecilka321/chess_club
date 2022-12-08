@@ -1,0 +1,41 @@
+body            {
+                background: yellow;
+                background-image: url('images/landscape.jpg');
+                font-family: Book Antiqua, Calibri, serif;
+                }
+h1              {
+                margin-bottom: 0.2em;
+                text-align: center;
+                color: #134993;
+                }
+p               {
+                margin: 0em;
+                }
+.p_link         {
+                display: inline;
+                }
+.p_link_home    {
+                margin-top: 1em;
+                display: inline;
+                }
+#flaticon_review
+                {
+                display: inline;
+                color: #e4118d;
+                }
+#icon8_review   {
+                display: inline;
+                margin-left: 2em;
+                color: #e4118d;
+                }
+hr              {
+                margin-bottom: 1em;
+                }
+
+#back_link      {
+                display: inline;
+                color: #e4118d;
+                }
+@media screen and (min-width: 700px) {
+
+}

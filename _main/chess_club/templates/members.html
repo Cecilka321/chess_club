@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" type="img/png" href="{% static 'icon_knight.png' %}">
+    <title>Members</title>
+    <style>
+        .menu           {   width: 100%;
+                            background-image: url( "{% static 'chess_floor.jpg' %}");   }
+        aside           {   width: 100%;
+                            background-image: url( "{% static 'chess_floor.jpg' %}");   }
+        #table_members  {   height: 400px;
+                            width: 100%;
+                            margin-bottom: 3em;         }
+        table           {   width: 100%;                }
+        table, th, td   {   border:1px solid black;
+                            background-color: #b4e6de;
+                            border-color: #1f608f;
+                            font-size: 1.2em;
+                            height: 2em;                }
+        td              {   text-align: center;
+                            vertical-align: middle;     }
+        main            {   font-family: Book Antiqua, Calibri, serif;
+                            font-size: 1.05em           }
+        #button_here    {   border-radius: 35%;         }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="link_back_to_home" href="{% url 'index' %}">
+            <img id="logo_back_to_home" src="{% static 'icon_knight2.png' %}" alt="logo klubu"></a>
+        <h1 class="head_caption">Club Members</h1>
+    </header>
+    <nav class="menu">
+        <ul id="menu_links_list">
+            <li><a class="link_news" href="{% url 'news' %}">News</a></li>
+            <li><a class="link_tournaments" href="{% url 'tournaments' %}">Tournaments</a></li>
+            <li><a class="link_history" href="{% url 'history' %}">History of club</a></li>
+            <li><a class="link_gallery" href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a class="link_contacts" href="{% url 'academy' %}">Chess Academy</a></li>
+            <li><a class="link_members" href="{% url 'contacts' %}">Contacts Us</a></li>
+            <li><a class="link_back_to_home" href="{% url 'index' %}">Main Page</a></li>
+        </ul>
+        <div class="height_of_main"></div>
+    </nav>
+    <main>
+        <h2>List of chess club members</h2>
+        <div id="table_members">
+            <div class="main_grid_item">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for member in members_list %}
+                            <tr>
+                                <td><a href="{% url 'detail' pk=member.pk %}">{{ member.firstname }} {{ member.lastname }}</a></td>
+                                <td>{{ member.rating }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <aside>
+    </aside>
+    <footer>
+        <h3 id="follow_us">You can follow us here:</h3>
+        <div id="icons-box">
+            <a href="https://facebook.com"><img class="icons" src="{% static 'icon_fb.png' %}" alt="icon facebook"></a>
+            <a href="https://instagram.com"><img class="icons" src="{% static 'icon_in.png' %}" alt="icon instagram"></a>
+            <a href="https://twitter.com/"><img class="icons" src="{% static 'icon_tw.png' %}" alt="icon twitter"></a>
+            <a href="https://youtube.com"><img class="icons" src="{% static 'icon_yt.png' %}" alt="icon youtube"></a>
+        </div>
+        <p id="terms">Attributing cooperation:</p>
+        <a id="link_attribution" href="{% url 'attribution' %}"><button id="button_here" type="button">Click me</button></a>
+        <p id="copyright">&copy; 2022 BehindTheSea Company Ltd.   |   All rights reserved </p>
+    </footer>
+</body>
+</html>
+
+        <!-- VYKRESLOVÁNÍ OBJEKTU DJANGO SYNTAX -->
+        <!-- <div id="table_members">
+            {% for object in object_list %}
+                <div>{{ object.firstname }}</div>
+            {% endfor %}
+        </div>  -->
+
+        <!-- {% for object in object_list %}
+            <a href="#">{{ object.firstname }} {{ object.lastname }} {{ object.rating }}</a>
+        {% endfor %} -->
